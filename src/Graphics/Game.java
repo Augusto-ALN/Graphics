@@ -25,6 +25,7 @@ public class Game extends Canvas implements Runnable{
   
   public static void main(String args[]) {
     Game game = new Game();
+    System.out.println("Teste");
   }
   public void run() {
     
