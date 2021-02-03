@@ -42,7 +42,12 @@ public class Game extends Canvas implements Runnable{
     thread.start();
   }
   public synchronized void stop() {
-    
+    isRunning = false;
+    try {
+      thread.join();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
   }
   
   public static void main(String args[]) {
@@ -91,5 +96,6 @@ public class Game extends Canvas implements Runnable{
         timer += 1000;
       }
     }
+    stop();
   }
 }
